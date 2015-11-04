@@ -21,7 +21,7 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 	/** Returns the pickup mesh */
-	FORCEINLINE UStaticMeshComponent* GetMesh() const { return pickupMesh; }
+	FORCEINLINE class UStaticMeshComponent* GetMesh() const { return PickupMesh; }
 
 	/** Returns whether or not the pickup is active */
 	UFUNCTION(BlueprintPure, Category = "Pickup")
@@ -38,6 +38,6 @@ protected:
 private:
 	// The static mesh representing the pickup
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pickup", meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* pickupMesh;
+	class UStaticMeshComponent* PickupMesh;
 	
 };
