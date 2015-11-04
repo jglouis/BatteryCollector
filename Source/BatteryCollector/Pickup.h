@@ -20,8 +20,8 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	/** Retruns the pickup mesh */
-	FORCEINLINE UStaticMeshComponent* getMesh() const { return pickupMesh; }
+	/** Returns the pickup mesh */
+	FORCEINLINE UStaticMeshComponent* GetMesh() const { return pickupMesh; }
 
 	/** Returns whether or not the pickup is active */
 	UFUNCTION(BlueprintPure, Category = "Pickup")
