@@ -80,8 +80,19 @@ protected:
 	void CollectPickups();
 
 	/** Starting power level of the character */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", meta = (BlueprintProtected = "true"))
 	float InitialPower;
+
+	/** Multiplyer for character speed */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", meta = (BlueprintProtected = "true"))
+	float SpeedFactor;
+
+	/** Speed when power level = 0 */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", meta = (BlueprintProtected = "true"))
+	float BaseSpeed;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Power")
+		void PowerChangeEffect();
 
 private:
 	/** Current power level of the character*/
