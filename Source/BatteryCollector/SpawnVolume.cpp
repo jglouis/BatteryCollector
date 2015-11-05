@@ -25,10 +25,7 @@ ASpawnVolume::ASpawnVolume()
 // Called when the game starts or when spawned
 void ASpawnVolume::BeginPlay()
 {
-	Super::BeginPlay();
-
-	SpawnDelay = FMath::FRandRange(SpawnDelayRangeLow, SpawnDelayRangeHigh);
-	GetWorldTimerManager().SetTimer(SpawnTimer, this, &ASpawnVolume::SpawnPickup, SpawnDelay, false);
+	Super::BeginPlay();	
 	
 }
 
@@ -78,4 +75,19 @@ void ASpawnVolume::SpawnPickup()
 	}
 		
 		
+}
+
+void ASpawnVolume::SetSpawningActive(bool bShouldSpawn)
+{
+	if (bShouldSpawn)
+	{
+		// Set the timer on Spawn Pickup
+		SpawnDelay = FMath::FRandRange(SpawnDelayRangeLow, SpawnDelayRangeHigh);
+		GetWorldTimerManager().SetTimer(SpawnTimer, this, &ASpawnVolume::SpawnPickup, SpawnDelay, false);
+	}
+	else
+	{
+		// Clear the timer on Spawn Pickup
+		GetWorldTimerManager().ClearTimer(SpawnTimer);
+	}
 }

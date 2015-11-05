@@ -57,6 +57,11 @@ protected:
 private:
 	/** Keeps track of the current play state */
 	EBatteryPlayState CurrentState;
+
+	TArray<class ASpawnVolume*> SpawnVolumeActors;
+
+	/** Handle any function calls that rely upon changing the state of the game */
+	void HandleNewState(EBatteryPlayState NewState);
 };
 
 
