@@ -15,7 +15,7 @@ public:
 
 	/** Returns power needed to win*/
 	UFUNCTION(BlueprintPure, Category = "Power")
-	float GetPowerToWin();
+	float GetPowerToWin() const;
 
 	virtual void BeginPlay() override;
 

@@ -57,7 +57,7 @@ void ABatteryCollectorGameMode::Tick(float DeltaTime)
 	}
 }
 
-float ABatteryCollectorGameMode::GetPowerToWin()
+float ABatteryCollectorGameMode::GetPowerToWin() const
 {
 	return PowerToWin;
 }
